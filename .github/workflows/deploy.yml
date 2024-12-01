@@ -28,7 +28,7 @@ jobs:
           submodules: recursive
           fetch-depth: 0
       - name: Build wheels
-        uses: pypa/cibuildwheel@v2.16
+        uses: pypa/cibuildwheel@v2.22
       - uses: actions/upload-artifact@v4
         with:
           name: cibw-wheels-ubuntu-latest-${{ strategy.job-index }}
@@ -45,7 +45,7 @@ jobs:
       - name: Install boost
         run: brew install boost
       - name: Build wheels
-        uses: pypa/cibuildwheel@v2.16
+        uses: pypa/cibuildwheel@v2.22
       - uses: actions/upload-artifact@v4
         with:
           name: cibw-wheels-macos-latest-${{ strategy.job-index }}
@@ -61,13 +61,13 @@ jobs:
           fetch-depth: 0
       - uses: ilammy/msvc-dev-cmd@v1
       - name: Install boost
-        uses: MarkusJx/install-boost@v2.4.4
+        uses: MarkusJx/install-boost@v2.4.5
         id: install-boost
         with:
           boost_version: ${{ env.BOOST_VERSION_MAJOR }}.${{ env.BOOST_VERSION_MINOR }}.${{ env.BOOST_VERSION_PATCH }}
           platform_version: 2019
       - name: Build wheels
-        uses: pypa/cibuildwheel@v2.16
+        uses: pypa/cibuildwheel@v2.22
         env:
           BOOST_ROOT: ${{ steps.install-boost.outputs.BOOST_ROOT }}
       - uses: actions/upload-artifact@v4
