@@ -12,25 +12,25 @@ configs_dir = test_dir / "configs"
 circuit_dir = test_dir / "circuits"
 
 
-@pytest.fixture()
+@pytest.fixture
 def data_line_aware_synthesis():
     with (configs_dir / "circuits_line_aware_synthesis.json").open() as f:
         return json.load(f)
 
 
-@pytest.fixture()
+@pytest.fixture
 def data_cost_aware_synthesis():
     with (configs_dir / "circuits_cost_aware_synthesis.json").open() as f:
         return json.load(f)
 
 
-@pytest.fixture()
+@pytest.fixture
 def data_line_aware_simulation():
     with (configs_dir / "circuits_line_aware_simulation.json").open() as f:
         return json.load(f)
 
 
-@pytest.fixture()
+@pytest.fixture
 def data_cost_aware_simulation():
     with (configs_dir / "circuits_cost_aware_simulation.json").open() as f:
         return json.load(f)

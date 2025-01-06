@@ -616,7 +616,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.editor.parser_failed = self.logWidget.addMessage
         self.editor.build_failed = (
             lambda error_message: self.logWidget.addMessage(match.group(2))
-            if (match := re.search("In line (.*): (.*)", error_message))
+            if (match := re.search(r"In line (.*): (.*)", error_message))
             else self.logWidget.addMessage("No matching lines found in error message")
         )
 
